@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">      
+<h1>{{ "Input feature here" }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:setfeature' %}" method="post">
+    {% csrf_token %}
+    <Table>
+    <TR><TD>Feature Title<TD>Description<TD>Client Name<TD>Priority<TD>Target Date<TD>Product Area<TD></TR>
+    
+    <TR>
+    <TD><input type="text" name="name" id="title" value="">
+    <TD><input type="text" name="description" id="description" value="">
+    <TD><select name="client" id="client">
+        {% for clients_c in clients%}
+        <option value="{{clients_c}}">{{clients_c}}</option>
+        {% endfor %}
+        </select>
+    <TD><input type="text" name="priority" id="priority" value="">
+    <TD><input type="text" name="date" id="date" value="">
+    <TD><select name="parea" id="parea">
+        {% for parea in areas%}
+        <option value="{{parea}}">{{parea}}</option>
+        {% endfor %}
+        </select>
+
+{% for fields in model.columns %}
+    <input type="text" name="fields" id="fields{{ forloop.counter }}" value="{{ 4 }}">
+{% endfor %}
+    <TD><input type="submit" value="Add Feature">
+    </TR>
+    </Table>
+</form>
+
+</html>

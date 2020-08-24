@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+    <li><a href="{% url 'polls:addfeature' %}">{{ "Click here to add features" }}</a></li>
+    
+<br>
+<br>
+
+<Table>
+    <u1><TR><TD>Feature Title<TD>Description<TD>Client Name<TD>Priority<TD>Target Date<TD>Product Area<TD></TR></u1>
+    
+    
+{%for i in latest_feature_list%}
+<TR><TD>{{i.title}}<TD>{{i.descript}}<TD>{{i.client_type}}<TD>{{i.client_priority}}<TD>{{i.target_date}}<TD>{{i.product_area}}<TD></TR>
+{%endfor%}
+    
+    </Table>
+</html>
