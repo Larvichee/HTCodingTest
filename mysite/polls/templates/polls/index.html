@@ -9,11 +9,16 @@
 
 <Table>
     <u1><TR><TD>Feature Title<TD>Description<TD>Client Name<TD>Priority<TD>Target Date<TD>Product Area<TD></TR></u1>
+
+{% if latest_feature_list %}    
     
-    
-{%for i in latest_feature_list%}
-<TR><TD>{{i.title}}<TD>{{i.descript}}<TD>{{i.client_type}}<TD>{{i.client_priority}}<TD>{{i.target_date}}<TD>{{i.product_area}}<TD></TR>
-{%endfor%}
+    {%for i in latest_feature_list%}
+    <TR><TD>{{i.title}}<TD>{{i.descript}}<TD>{{i.client_type}}<TD>{{i.client_priority}}<TD>{{i.target_date}}<TD>{{i.product_area}}<TD></TR>
+    {%endfor%}
+
+{% else %}
+    <p>No feature requests have been adding in yet.</p>
+{% endif %}
     
     </Table>
 </html>
