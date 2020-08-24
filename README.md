@@ -10,3 +10,4 @@ Steps :
 2) Unzzip to destination folder and open cmd prompt and move to directory where manage.py is.
 <br>
 3) Run "python manage.py runserver"
+4) Goto http://localhost:8000/polls/
